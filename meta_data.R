@@ -96,7 +96,6 @@ tgentmp1 <- function(d,measure,col_spanners){
                            "ME#" = "-") %>% 
       gt(id = paste("tb1",measure,sep="")) |>
       tab_source_note("This selection is either not included in the survey or not computed due to combinatorial complexity constraints.")
-    print(id_correction_fn(tmp_html))
     return(id_correction_fn(tmp_html))
   } 
   tab_html <- d %>%
@@ -170,7 +169,6 @@ tgentmp3 <- function(d,measure,col_spanners,total=""){
                        "ME#" = "-") %>% 
       gt(id = paste("tb1",measure,sep="")) |>
       tab_source_note("This selection is either not included in the survey or not computed due to combinatorial complexity constraints.")
-    print(id_correction_fn(tmp_html))
     return(id_correction_fn(tmp_html))
   } 
   tab_html <- d %>%
@@ -253,7 +251,6 @@ tgentmp13 <- function(d,measure,col_spanners){
                        "ME#" = "-") %>% 
       gt(id = paste("tb1",measure,sep="")) |>
       tab_source_note("This selection is either not included in the survey or not computed due to combinatorial complexity constraints.")
-    print(id_correction_fn(tmp_html))
     return(id_correction_fn(tmp_html))
   } 
   tab_html <- d %>%

@@ -10,7 +10,10 @@
 library(shiny)
 library(shinyjs)
 library(shinycssloaders)
+library(shinylogs)
 library(gt)
+
+use_tracking()
 
 # Define UI for application that draws a histogram
 fluidPage(

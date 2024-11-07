@@ -13,6 +13,9 @@ library(tidyverse)
 library(writexl)
 library(xml2)
 library(rvest)
+library(shinylogs)
+library(DBI)
+library(lubridate)
 
 load(".RData")
 
@@ -20,6 +23,21 @@ cloud_prep()
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {
+  
+  track_usage(storage_mode = store_custom(sendlog,
+                                          db = "logs",
+                                          idsession=as.character(format(as.double(floor(runif(1)*1e30)), scientific = F)),
+                                          ip = session$request$REMOTE_ADDR,
+                                          name = "BYOS-ACS5Y"),
+              what = c("session", "input", "output", "error"),
+              exclude_input_regex = NULL,
+              exclude_input_id = NULL,
+              on_unload = FALSE,
+              app_name = NULL,
+              exclude_users = NULL,
+              get_user = NULL,
+              dependencies = TRUE,
+              session = getDefaultReactiveDomain())
   
   observeEvent(input$top_button,{shinyjs::runjs("window.scrollTo(0, 50)")})
 
