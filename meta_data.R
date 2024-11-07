@@ -312,15 +312,5 @@ tgentmp13 <- function(d,measure,col_spanners){
   id_correction_fn(tab_html)
 }
 
-
-inputIp <- function(inputId, value=''){
-  tagList(
-    singleton(tags$head(tags$script(src = "js/md5.js", type='text/javascript'))),
-    singleton(tags$head(tags$script(src = "js/shinyBindings.js", type='text/javascript'))),
-    tags$body(onload="setvalues()"),
-    tags$input(id = inputId, class = "ipaddr", value=as.character(value), type="text", style="display:none;")
-  )
-}
-
 source("gcs_interface.R")
 save.image(".RData")
