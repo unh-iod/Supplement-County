@@ -28,7 +28,7 @@ fluidPage(
              "a {color: #000000 !important;}",
              "span {color: #000000 !important;}"),
   # Application title
-  navbarPage(id = "container",strong("Build Your Own Statistics"),
+  navbarPage(id = "container",strong(""),
              tabPanel(strong("Prevalence and Population"), fluid = TRUE,
                       h3("Source: American Community Survey (ACS) 5-year"),
                       sidebarLayout(

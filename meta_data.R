@@ -1,5 +1,14 @@
 # Sets data stored locally in app
+
+library(shiny)
+library(shinyjs)
 library(tidyverse)
+library(writexl)
+library(xml2)
+library(rvest)
+library(shinylogs)
+library(DBI)
+library(lubridate)
 #setwd("Supplement-County/")
 getwd()
 
