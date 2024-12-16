@@ -188,7 +188,7 @@ fluidPage(
                         )
                       )
              ),
-             tabPanel(strong("Edcuation"), fluid = TRUE,
+             tabPanel(strong("Education"), fluid = TRUE,
                       h3("Source: American Community Survey (ACS) 5-year"),
                       sidebarLayout(
                         sidebarPanel(

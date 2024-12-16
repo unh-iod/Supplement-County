@@ -170,7 +170,7 @@ shinyServer(function(input, output, session) {
     } else {
       txt <- paste(txt,"for the United States and States",sep="")
     }
-    paste(txt,", by Disability Status",": ",input$Year1,sep="")
+    paste(txt,", by Disability Status",": ",as.numeric(input$Year1)-4,"-",input$Year1,sep="")
   })
   
   dis1 <- reactive({
@@ -198,7 +198,7 @@ shinyServer(function(input, output, session) {
   })
   
   output$Citation1 <- renderText({
-    txt <- paste("Citation: ",authors,"(2024). Annual Disability Statistics Compendium: ",input$Year1," (Custom Prevalence and Population Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",data_years$acs[data_years$acs %>% length()] - 4," - ",data_years$acs[data_years$acs %>% length()]," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
+    txt <- paste("Citation: ",authors,"(",year(Sys.Date()),"). Annual Disability Statistics Compendium: ",input$Year1," (Custom Prevalence and Population Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",as.numeric(input$Year1) - 4," - ",input$Year1," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
     txt
   })
   
@@ -353,7 +353,7 @@ shinyServer(function(input, output, session) {
     } else {
       txt <- paste(txt,"for the United States and States",sep="")
     }
-    paste(txt,", by Disability Status",": ",input$Year3,sep="")
+    paste(txt,", by Disability Status",": ",as.numeric(input$Year3)-4,"-",input$Year3,sep="")
   })
   
   dis3 <- reactive({
@@ -381,7 +381,7 @@ shinyServer(function(input, output, session) {
   })
   
   output$Citation3 <- renderText({
-    txt <- paste("Citation: ",authors,"(2024). Annual Disability Statistics Compendium: ",input$Year3," (Custom Employment Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",data_years$acs[data_years$acs %>% length()] - 4," - ",data_years$acs[data_years$acs %>% length()]," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
+    txt <- paste("Citation: ",authors,"(",year(Sys.Date()),"). Annual Disability Statistics Compendium: ",input$Year3," (Custom Employment Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",as.numeric(input$Year3) - 4," - ",input$Year3," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
     txt
   })
   
@@ -534,7 +534,7 @@ shinyServer(function(input, output, session) {
     } else {
       txt <- paste(txt,"for the United States and States",sep="")
     }
-    paste(txt,", by Disability Status",": ",input$Year6,sep="")
+    paste(txt,", by Disability Status",": ",as.numeric(input$Year6)-4,"-",input$Year6,sep="")
   })
   
   dis6 <- reactive({
@@ -562,7 +562,7 @@ shinyServer(function(input, output, session) {
   })
   
   output$Citation6 <- renderText({
-    txt <- paste("Citation: ",authors,"(2024). Annual Disability Statistics Compendium: ",input$Year6," (Custom Poverty Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",data_years$acs[data_years$acs %>% length()] - 4," - ",data_years$acs[data_years$acs %>% length()]," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
+    txt <- paste("Citation: ",authors,"(",year(Sys.Date()),"). Annual Disability Statistics Compendium: ",input$Year6," (Custom Poverty Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",as.numeric(input$Year6) - 4," - ",input$Year6," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
     txt
   })
   
@@ -736,7 +736,7 @@ shinyServer(function(input, output, session) {
     } else {
       txt <- paste(txt,"for the United States and States",sep="")
     }
-    paste(txt,", by Disability Status",": ",input$Year9,sep="")
+    paste(txt,", by Disability Status",": ",as.numeric(input$Year9)-4,"-",input$Year9,sep="")
   })
   
   dis9 <- reactive({
@@ -764,12 +764,13 @@ shinyServer(function(input, output, session) {
   })
   
   output$Citation9 <- renderText({
-    txt <- paste("Citation: ",authors,"(2024). Annual Disability Statistics Compendium: ",input$Year9," (Custom Insurance Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",data_years$acs[data_years$acs %>% length()] - 4," - ",data_years$acs[data_years$acs %>% length()]," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
+    txt <- paste("Citation: ",authors,"(",year(Sys.Date()),"). Annual Disability Statistics Compendium: ",input$Year9," (Custom Insurance Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",as.numeric(input$Year9) - 4," - ",input$Year9," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
     txt
   })
   
   tgen9 <- reactive({
-    tgentmp3(Dat9(),measure_dummy9() %>% str_replace_all(" ",intToUtf8(95)),col_spanners = c(dis9(),paste("No",dis9()),"test"),denom_dummy9())
+    tgentmp3(Dat9(),measure_dummy9() %>% str_replace_all(" ",intToUtf8(95)),
+             col_spanners = c(dis9(),paste("No",dis9()),"test"),denom_dummy9())
   })
   
   output$TStable9 <- function(){
@@ -933,7 +934,7 @@ shinyServer(function(input, output, session) {
     } else {
       txt <- paste(txt,"for the United States and States",sep="")
     }
-    paste(txt,", by Disability Status",": ",input$Year13,sep="")
+    paste(txt,", by Disability Status",": ",as.numeric(input$Year13)-4,"-",input$Year13,sep="")
   })
   
   dis13 <- reactive({
@@ -961,7 +962,7 @@ shinyServer(function(input, output, session) {
   })
   
   output$Citation13 <- renderText({
-    txt <- paste("Citation: ",authors,"(2024). Annual Disability Statistics Compendium: ",input$Year13," (Custom Education Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",data_years$acs[data_years$acs %>% length()] - 4," - ",data_years$acs[data_years$acs %>% length()]," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
+    txt <- paste("Citation: ",authors,"(",year(Sys.Date()),"). Annual Disability Statistics Compendium: ",input$Year13," (Custom Education Table). Durham, NH: University of New Hampshire, Institute on Disability. Source: U.S. Census Bureau, ",as.numeric(input$Year13) - 4," - ",input$Year13," American Community Survey 5-year estimates. https://data.census.gov. Based on a sample and subject to sampling variability.",sep="")
     txt
   })
   
