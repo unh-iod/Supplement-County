@@ -57,7 +57,7 @@ fluidPage(
                         ),
                         mainPanel(
                           fluidRow(
-                            p("This section presents statistics on the United States civilian population and people with disabilities, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov tables B18101 - B18107. For the tables presented here statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Collection Glossary for more details).")),
+                            p("This section presents statistics on the United States civilian population and people with disabilities, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov tables B18101 - B18107. In the tables presented here,  statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Compendium Glossary for more details).")),
                           downloadButton("Downloader", "Download XLSX"),
                           h2(strong(textOutput("mTitle1"))),
                           fluidRow(
@@ -77,7 +77,7 @@ fluidPage(
                           hr(),
                           selectInput("Measure3",h3("Measure"),
                                       choices = c("Employment to Population Ratio" = "E2PR",
-                                                  "Labor Foce Particiaption" = "LFP",
+                                                  "Labor Force Particiaption" = "LFP",
                                                   "Unemployment Rate" = "UNEMP")),
                           selectInput("Disability3",h3("Disability"),
                                       choices = c("Disability"#,
@@ -97,7 +97,7 @@ fluidPage(
                         ),
                         mainPanel(
                           fluidRow(
-                            p("This section presents statistics on employment of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table C18130. For the tables presented here statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Collection Glossary for more details).")),
+                            p("This section presents statistics on employment of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table C18130. In the tables presented here, statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Compendium Glossary for more details).")),
                           downloadButton("Downloader3", "Download XLSX"),
                           h2(strong(textOutput("mTitle3"))),
                           fluidRow(
@@ -135,7 +135,7 @@ fluidPage(
                         ),
                         mainPanel(
                           fluidRow(
-                            p("This section presents statistics on poverty of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table C18130. For the tables presented here statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Collection Glossary for more details).")),
+                            p("This section presents statistics on poverty of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table C18130. In the tables presented here,  statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Compendium Glossary for more details).")),
                           downloadButton("Downloader6", "Download XLSX"),
                           h2(strong(textOutput("mTitle6"))),
                           fluidRow(
@@ -155,8 +155,8 @@ fluidPage(
                           hr(),
                           selectInput("Measure9",h3("Measure"),
                                       choices = c("With Health Insurance" = "INSURANCE",
-                                                  "With Health Private Insurance" = "INSURANCE1",
-                                                  "With Health Public Insurance" = "INSURANCE2")),
+                                                  "With Private Health Insurance" = "INSURANCE1",
+                                                  "With Public Health Insurance" = "INSURANCE2")),
                           selectInput("Disability9",h3("Disability"),
                                       choices = c("Disability"#,
                                                   #"Deaf or serious difficulty hearing",
@@ -177,7 +177,7 @@ fluidPage(
                         ),
                         mainPanel(
                           fluidRow(
-                            p("This section presents statistics on health insurance of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table B18135. For the tables presented here statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Collection Glossary for more details).")),
+                            p("This section presents statistics on health insurance of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table B18135. In the tables presented here,  statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Compendium Glossary for more details).")),
                           downloadButton("Downloader9", "Download XLSX"),
                           h2(strong(textOutput("mTitle9"))),
                           fluidRow(
@@ -213,7 +213,7 @@ fluidPage(
                         ),
                         mainPanel(
                           fluidRow(
-                            p("This section presents statistics on education of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table S1811. For the tables presented here statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Collection Glossary for more details).")),
+                            p("This section presents statistics on education of the United States civilian population by disability status, within national, state, and county locations. The principal source of these data is the U.S. Census Bureau, specifically the American Community Survey 5-Year Estimates, summarized at data.census.gov table S1811. In the tables presented here,  statistics for people with disabilities (disability status or disability type) are based on having responded ‘yes’ to a series of questions within the American Community Survey (see the Disability Statistics Compendium Glossary for more details).")),
                           downloadButton("Downloader13", "Download XLSX"),
                           h2(strong(textOutput("mTitle13"))),
                           fluidRow(

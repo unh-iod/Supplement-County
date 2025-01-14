@@ -273,7 +273,7 @@ tgentmp13 <- function(d,measure,col_spanners){
                sep_mark = ",",
                decimals = 0) |>
     tab_source_note(c("Margins of error (ME) are based on 95% confidence intervals.",
-                      "*estimate is unailable.")) |>
+                      "*estimate is unavailable.")) |>
     tab_spanner(label = col_spanners[1],
                 columns = c("#","ME#",
                             "%","ME%")) |>

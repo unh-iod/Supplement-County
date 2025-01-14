@@ -769,7 +769,7 @@ shinyServer(function(input, output, session) {
   })
   
   tgen9 <- reactive({
-    tgentmp3(Dat9(),measure_dummy9() %>% str_replace_all(" ",intToUtf8(95)),
+    tgentmp3(Dat9(),sprintf(measure_dummy9() %>% str_replace_all(" ",intToUtf8(0x2800L))),
              col_spanners = c(dis9(),paste("No",dis9()),"test"),denom_dummy9())
   })
   
