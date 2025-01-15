@@ -23,10 +23,39 @@ fluidPage(
                      font-family: Helvetica;}",
              ".shiny-output-error { visibility: hidden; }",
              ".shiny-output-error:before { visibility: hidden; }",
-             ".navbar {background-color: #FFFFFF !important; }",
+             #".navbar {background-color: #FFFFFF !important; }",
              ".navbar-default .navbar-brand {color: #000000 !important;}",
-             "a {color: #000000 !important;}",
-             "span {color: #000000 !important;}"),
+             #"a {color: #000000 !important;}",
+             "span {color: #000000 !important;}",
+             ".navbar-default .navbar-brand {color: #000000 !important;}",
+             ".navbar .container-fluid {background-color: ##EEEEEE !important;
+                                         border-color: ##EEEEEE !important;
+                                         margin: 2px;}",
+             "ul.nav {list-style-position:inside !important;}",
+             ".navbar li {background-color: #F6B52C;
+                       border: 1px solid #F6B52C;
+                       border-radius: 5px;
+                       margin: 2px;}",
+             ".navbar #container li.active a {border-color:#E0A122;
+                                   background-color:#E0A122;}",
+             ".navbar #container li:hover {border-color:#E0A122;
+                                   background-color:#E0A122 !important;}",
+             ".navbar a {color: #000000 !important;}",
+             "span {color: #000000 !important;}",
+             "#Downloader {background-color: #0D4D8C;
+                            color: #FFFFFF;}",
+             "#Downloader3 {background-color: #0D4D8C;
+                            color: #FFFFFF;}",
+             "#Downloader5 {background-color: #0D4D8C;
+                            color: #FFFFFF;}",
+             "#Downloader6 {background-color: #0D4D8C;
+                            color: #FFFFFF;}",
+             "#Downloader8 {background-color: #0D4D8C;
+                            color: #FFFFFF;}",
+             "#Downloader9 {background-color: #0D4D8C;
+                            color: #FFFFFF;}",
+             "#Downloader13 {background-color: #0D4D8C;
+                            color: #FFFFFF;}"),
   # Application title
   navbarPage(id = "container",strong(""),
              tabPanel(strong("Prevalence and Population"), fluid = TRUE,
