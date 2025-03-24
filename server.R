@@ -50,22 +50,22 @@ shinyServer(function(input, output, session) {
     if(input$Disability1=="Disability"){
       "disability"
     }
-    else if(input$Disability1=="Deaf or serious difficulty hearing"){
+    else if(input$Disability1=="Hearing Disability"){
       "hearing"
     }
-    else if(input$Disability1=="Blind or serious difficulty seeing"){
+    else if(input$Disability1=="Seeing Disability"){
       "seeing"
     }
-    else if(input$Disability1=="Serious difficulty concentrating, remembering, or making decisions"){
+    else if(input$Disability1=="Cognitive Disability"){
       "remembering"
     }
-    else if(input$Disability1=="Serious difficulty walking or climbing stairs"){
+    else if(input$Disability1=="Ambulatory Disability"){
       "mobility"
     }
-    else if(input$Disability1=="Difficulty dressing or bathing"){
+    else if(input$Disability1=="Self-Care Disability"){
       "selfcare"
     }
-    else if(input$Disability1=="Difficulty doing errands alone"){
+    else if(input$Disability1=="Independent Living Disability"){
       "independentliving"
     }
   })
@@ -145,9 +145,9 @@ shinyServer(function(input, output, session) {
     ######### Age group choices ###################
     ######### Age group choices ###################
     if(agegroup_dummy() == "Any"){ # if any group is selected
-      if(!input$Disability1=="Difficulty doing errands alone"){ # and if not difficulty doing errands alone
+      if(!input$Disability1=="Independent Living Disability"){ # and if not Independent Living Disability
         txt <- paste(txt,"Ages ",input$Agegroup1," ",sep="") # then it use the selected group
-      } else { # otherwise if difficulty doing errands alone
+      } else { # otherwise if Independent Living Disability
         if (input$Agegroup1 == "5 to 17 Years"){ # and its the young age group
           txt <- paste(txt,"Ages 15 to 17 ",sep="") # update the group to only include 15 to 17
         } else{
@@ -155,12 +155,12 @@ shinyServer(function(input, output, session) {
         }
       }
     } else {
-      if(input$Disability1=="Difficulty dressing or bathing" |
-         input$Disability1=="Serious difficulty concentrating, remembering, or making decisions" |
-         input$Disability1=="Serious difficulty walking or climbing stairs"){
+      if(input$Disability1=="Self-Care Disability" |
+         input$Disability1=="Cognitive Disability" |
+         input$Disability1=="Ambulatory Disability"){
         txt <- paste(txt,"Age 5 Years and Over ",sep="")
       }
-      if(input$Disability1=="Difficulty doing errands alone"){
+      if(input$Disability1=="Independent Living Disability"){
         txt <- paste(txt,"Age 18 Years and Over ",sep="")
       }
     }
@@ -177,22 +177,22 @@ shinyServer(function(input, output, session) {
     if(input$Disability1=="Disability"){
       "Disability"
     }
-    else if(input$Disability1=="Deaf or serious difficulty hearing"){
+    else if(input$Disability1=="Hearing Disability"){
       "Hearing Disability"
     }
-    else if(input$Disability1=="Blind or serious difficulty seeing"){
+    else if(input$Disability1=="Seeing Disability"){
       "Vision Disability"
     }
-    else if(input$Disability1=="Serious difficulty concentrating, remembering, or making decisions"){
+    else if(input$Disability1=="Cognitive Disability"){
       "Cognitive Disability"
     }
-    else if(input$Disability1=="Serious difficulty walking or climbing stairs"){
+    else if(input$Disability1=="Ambulatory Disability"){
       "Ambulatory Disability"
     }
-    else if(input$Disability1=="Difficulty dressing or bathing"){
+    else if(input$Disability1=="Self-Care Disability"){
       "Self-Care Disability"
     }
-    else if(input$Disability1=="Difficulty doing errands alone"){
+    else if(input$Disability1=="Independent Living Disability"){
       "Independent Living Disability"
     }
   })
@@ -248,22 +248,22 @@ shinyServer(function(input, output, session) {
     #if(input$Disability1=="Disability"){
     "disability"
     #}
-    # else if(input$Disability1=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability1=="Hearing Disability"){
     #   "hearing"
     # }
-    # else if(input$Disability1=="Blind or serious difficulty seeing"){
+    # else if(input$Disability1=="Seeing Disability"){
     #   "seeing"
     # }
-    # else if(input$Disability1=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability1=="Cognitive Disability"){
     #   "remembering"
     # }
-    # else if(input$Disability1=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability1=="Ambulatory Disability"){
     #   "mobility"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "selfcare"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "independentliving"
     # }
   })
@@ -360,22 +360,22 @@ shinyServer(function(input, output, session) {
     if(input$Disability3=="Disability"){
       "Disability"
     }
-    # else if(input$Disability3=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability3=="Hearing Disability"){
     #   "Hearing Disability"
     # }
-    # else if(input$Disability3=="Blind or serious difficulty seeing"){
+    # else if(input$Disability3=="Seeing Disability"){
     #   "Vision Disability"
     # }
-    # else if(input$Disability3=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability3=="Cognitive Disability"){
     #   "Cognitive Disability"
     # }
-    # else if(input$Disability3=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability3=="Ambulatory Disability"){
     #   "Ambulatory Disability"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "Self-Care Disability"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "Independent Living Disability"
     # }
   })
@@ -432,22 +432,22 @@ shinyServer(function(input, output, session) {
     #if(input$Disability1=="Disability"){
       "disability"
     #}
-    # else if(input$Disability1=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability1=="Hearing Disability"){
     #   "hearing"
     # }
-    # else if(input$Disability1=="Blind or serious difficulty seeing"){
+    # else if(input$Disability1=="Seeing Disability"){
     #   "seeing"
     # }
-    # else if(input$Disability1=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability1=="Cognitive Disability"){
     #   "remembering"
     # }
-    # else if(input$Disability1=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability1=="Ambulatory Disability"){
     #   "mobility"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "selfcare"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "independentliving"
     # }
   })
@@ -541,22 +541,22 @@ shinyServer(function(input, output, session) {
     if(input$Disability6=="Disability"){
       "Disability"
     }
-    # else if(input$Disability6=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability6=="Hearing Disability"){
     #   "Hearing Disability"
     # }
-    # else if(input$Disability6=="Blind or serious difficulty seeing"){
+    # else if(input$Disability6=="Seeing Disability"){
     #   "Vision Disability"
     # }
-    # else if(input$Disability6=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability6=="Cognitive Disability"){
     #   "Cognitive Disability"
     # }
-    # else if(input$Disability6=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability6=="Ambulatory Disability"){
     #   "Ambulatory Disability"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "Self-Care Disability"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "Independent Living Disability"
     # }
   })
@@ -613,22 +613,22 @@ shinyServer(function(input, output, session) {
     #if(input$Disability1=="Disability"){
       "disability"
     #}
-    # else if(input$Disability1=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability1=="Hearing Disability"){
     #   "hearing"
     # }
-    # else if(input$Disability1=="Blind or serious difficulty seeing"){
+    # else if(input$Disability1=="Seeing Disability"){
     #   "seeing"
     # }
-    # else if(input$Disability1=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability1=="Cognitive Disability"){
     #   "remembering"
     # }
-    # else if(input$Disability1=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability1=="Ambulatory Disability"){
     #   "mobility"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "selfcare"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "independentliving"
     # }
   })
@@ -743,22 +743,22 @@ shinyServer(function(input, output, session) {
     if(input$Disability9=="Disability"){
       "Disability"
     }
-    # else if(input$Disability9=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability9=="Hearing Disability"){
     #   "Hearing Disability"
     # }
-    # else if(input$Disability9=="Blind or serious difficulty seeing"){
+    # else if(input$Disability9=="Seeing Disability"){
     #   "Vision Disability"
     # }
-    # else if(input$Disability9=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability9=="Cognitive Disability"){
     #   "Cognitive Disability"
     # }
-    # else if(input$Disability9=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability9=="Ambulatory Disability"){
     #   "Ambulatory Disability"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "Self-Care Disability"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "Independent Living Disability"
     # }
   })
@@ -816,22 +816,22 @@ shinyServer(function(input, output, session) {
     #if(input$Disability1=="Disability"){
     "disability"
     #}
-    # else if(input$Disability1=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability1=="Hearing Disability"){
     #   "hearing"
     # }
-    # else if(input$Disability1=="Blind or serious difficulty seeing"){
+    # else if(input$Disability1=="Seeing Disability"){
     #   "seeing"
     # }
-    # else if(input$Disability1=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability1=="Cognitive Disability"){
     #   "remembering"
     # }
-    # else if(input$Disability1=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability1=="Ambulatory Disability"){
     #   "mobility"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "selfcare"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "independentliving"
     # }
   })
@@ -909,9 +909,9 @@ shinyServer(function(input, output, session) {
     txt <-paste(txt,"Civilians 25 Years and Over",sep="")
     ######### Age group choices ###################
     # if(agegroup_dummy13() == "Any"){ # if any group is selected
-    #   if(!input$Disability13=="Difficulty doing errands alone"){ # and if not difficulty doing errands alone
+    #   if(!input$Disability13=="Independent Living Disability"){ # and if not Independent Living Disability
     #     txt <- paste(txt,"Ages ",input$Agegroup13," ",sep="") # then it use the selected group
-    #   } else { # otherwise if difficulty doing errands alone
+    #   } else { # otherwise if Independent Living Disability
     #     if (input$Agegroup13 == "5 to 17 Years"){ # and its the young age group
     #       txt <- paste(txt,"Ages 15 to 17 ",sep="") # update the group to only include 15 to 17
     #     } else{
@@ -919,12 +919,12 @@ shinyServer(function(input, output, session) {
     #     }
     #   }
     # } else {
-    #   if(input$Disability13=="Difficulty dressing or bathing" |
-    #      input$Disability13=="Serious difficulty concentrating, remembering, or making decisions" |
-    #      input$Disability13=="Serious difficulty walking or climbing stairs"){
+    #   if(input$Disability13=="Self-Care Disability" |
+    #      input$Disability13=="Cognitive Disability" |
+    #      input$Disability13=="Ambulatory Disability"){
     #     txt <- paste(txt,"Age 5 Years and Over ",sep="")
     #   }
-    #   if(input$Disability13=="Difficulty doing errands alone"){
+    #   if(input$Disability13=="Independent Living Disability"){
     #     txt <- paste(txt,"Age 18 Years and Over ",sep="")
     #   }
     # }
@@ -941,22 +941,22 @@ shinyServer(function(input, output, session) {
     if(input$Disability13=="Disability"){
       "Disability"
     }
-    # else if(input$Disability13=="Deaf or serious difficulty hearing"){
+    # else if(input$Disability13=="Hearing Disability"){
     #   "Hearing Disability"
     # }
-    # else if(input$Disability13=="Blind or serious difficulty seeing"){
+    # else if(input$Disability13=="Seeing Disability"){
     #   "Vision Disability"
     # }
-    # else if(input$Disability13=="Serious difficulty concentrating, remembering, or making decisions"){
+    # else if(input$Disability13=="Cognitive Disability"){
     #   "Cognitive Disability"
     # }
-    # else if(input$Disability13=="Serious difficulty walking or climbing stairs"){
+    # else if(input$Disability13=="Ambulatory Disability"){
     #   "Ambulatory Disability"
     # }
-    # else if(input$Disability1=="Difficulty dressing or bathing"){
+    # else if(input$Disability1=="Self-Care Disability"){
     #   "Self-Care Disability"
     # }
-    # else if(input$Disability1=="Difficulty doing errands alone"){
+    # else if(input$Disability1=="Independent Living Disability"){
     #   "Independent Living Disability"
     # }
   })
