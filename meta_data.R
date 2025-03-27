@@ -17,7 +17,7 @@ f <- function(x) {
   stringi::stri_unescape_unicode(x)
 }
 
-data_years <- list("acs" = c(2022),
+data_years <- list("acs" = c(2023:2012),
                    "cps" = c())
 uniques <- list()
 uniques$gender <- c("Female","Male")
@@ -99,6 +99,7 @@ tgentmp1 <- function(d,measure,col_spanners){
                 "%","ME%",
                 "#  ","ME#  ",
                 "% ","ME% ")
+
   if(nrow(d) == 0){
     tmp_html <- tibble("Geography" = "-",
                            "#"="-",
@@ -164,20 +165,21 @@ tgentmp1 <- function(d,measure,col_spanners){
 }
 
 tgentmp3 <- function(d,measure,col_spanners,total=""){
-  names(d) <- c("Geography",
+  try(names(d) <- c("Geography",
                 "#","ME#", #
                 "# ","ME# ",#
                 "%","ME%",#
                 "#  ","ME#  ",#
                 "#   ","ME#   ",#
                 "% ","ME% ",
-                "Estimate", "Lower One-Sided 95% Confidence Interval",  "Upper One-Sided 95% Confidence Interval")
-  if(nrow(d) == 0){
+                "Estimate", "Lower One-Sided 95% Confidence Interval",  "Upper One-Sided 95% Confidence Interval"))
+
+  if(nrow(d) == 0 | nrow(d) == 1){
     tmp_html <- tibble("Geography" = "-",
                        "#"="-",
                        "ME#" = "-") %>% 
       gt(id = paste("tb1",measure,sep="")) |>
-      tab_source_note("This selection is either not included in the survey or not computed due to combinatorial complexity constraints.")
+      tab_source_note("This selection is not included in downloadable files from data.census.gov")
     return(id_correction_fn(tmp_html))
   } 
   tab_html <- d %>%
@@ -253,8 +255,9 @@ tgentmp13 <- function(d,measure,col_spanners){
                 "%  ","ME%  ",
                 "Estimate",
                 "Lower One-Sided 95% Confidence Interval",
-                "Upper One-Sided 95% Confidence Interval")
-  if(nrow(d) == 0){
+                "Upper One-Sided 95% Confidence Interval")  
+
+  if(nrow(d) == 0 | nrow(d) == 1){
     tmp_html <- tibble("Geography" = "-",
                        "#"="-",
                        "ME#" = "-") %>% 

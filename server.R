@@ -687,30 +687,40 @@ shinyServer(function(input, output, session) {
       filterer6$agegroup == agegroup_dummy9())
     filename <- paste("acs",input$Year9,"_",index,"_",dis_dummy9(),"_",input$Measure9,"_COUNTY.rds",sep="")
     noprint <- cloud_prep() #
-    tmp <- get_object(filename,"compendium_project_storage",type="actuals")
-    tmp <- tmp[-c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),] %>%
-      rbind(tmp[c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),]) %>%
-      select(-Geography,-contains("dagger_")) %>%
-      rename(Geography = Geographic.Area.Name)
-    # Filter based on input selection
-    if(state_dummy9() == "All"){
-      tmp <- tmp %>%
-        filter(!str_detect(Geography,","))
-    } else {
-      tmp <- tmp %>%
-        filter(str_detect(Geography,"United States") | str_detect(Geography,input$State9))
-    }
-    # if(gen_dummy() == "Any"){
-    #   tmp <- tmp %>%
-    #     filter(gender == input$Gender1) %>%
-    #     select(-gender)
-    # }
-    if(agegroup_dummy9() == "Any"){
-      tmp <- tmp %>%
-        filter(agegroup1 == input$Agegroup9) %>%
-        select(-agegroup1)
-    }
-    tmp
+    tryCatch(
+      {
+        tmp <- get_object(filename,"compendium_project_storage",type="actuals")
+        tmp <- tmp[-c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),] %>%
+          rbind(tmp[c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),]) %>%
+          select(-Geography,-contains("dagger_")) %>%
+          rename(Geography = Geographic.Area.Name)
+        # Filter based on input selection
+        if(state_dummy9() == "All"){
+          tmp <- tmp %>%
+            filter(!str_detect(Geography,","))
+        } else {
+          tmp <- tmp %>%
+            filter(str_detect(Geography,"United States") | str_detect(Geography,input$State9))
+        }
+        # if(gen_dummy() == "Any"){
+        #   tmp <- tmp %>%
+        #     filter(gender == input$Gender1) %>%
+        #     select(-gender)
+        # }
+        if(agegroup_dummy9() == "Any"){
+          tmp <- tmp %>%
+            filter(agegroup1 == input$Agegroup9) %>%
+            select(-agegroup1)
+        }
+        tmp
+      },
+      error = function(cond) {
+        tmp <- tibble("Geography" = "-",
+               "#"="-",
+               "ME#" = "-")
+        tmp
+      })
+
   })
   ################
   
@@ -866,32 +876,41 @@ shinyServer(function(input, output, session) {
     index <- which(1==1)
     filename <- paste("acs",input$Year13,"_",index,"_",dis_dummy13(),"_EDUC_COUNTY.rds",sep="")
     noprint <- cloud_prep() #
-    tmp <- get_object(filename,"compendium_project_storage",type="actuals")
-    tmp <- tmp[-c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),] %>%
-      rbind(tmp[c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),]) %>%
-      select(-Geography) %>%
-      rename(Geography = Geographic.Area.Name)
-    # Filter based on input selection
-    if(state_dummy13() == "All"){
+    tryCatch(
+      {
+      tmp <- get_object(filename,"compendium_project_storage",type="actuals")
+      tmp <- tmp[-c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),] %>%
+        rbind(tmp[c(which(str_detect(tmp$Geographic.Area.Name,"Puerto Rico"))),]) %>%
+        select(-Geography) %>%
+        rename(Geography = Geographic.Area.Name)
+      # Filter based on input selection
+      if(state_dummy13() == "All"){
+        tmp <- tmp %>%
+          filter(!str_detect(Geography,","))
+      } else {
+        tmp <- tmp %>%
+          filter(str_detect(Geography,"United States") | str_detect(Geography,input$State13))
+      }
+      # if(gen_dummy() == "Any"){
+      #   tmp <- tmp %>%
+      #     filter(gender == input$Gender1) %>%
+      #     select(-gender)
+      # }
+      # if(agegroup_dummy13() == "Any"){
+      #   tmp <- tmp %>%
+      #     filter(agegroup1 == input$Agegroup13) %>%
+      #     select(-agegroup1)
+      # }
       tmp <- tmp %>%
-        filter(!str_detect(Geography,","))
-    } else {
-      tmp <- tmp %>%
-        filter(str_detect(Geography,"United States") | str_detect(Geography,input$State13))
-    }
-    # if(gen_dummy() == "Any"){
-    #   tmp <- tmp %>%
-    #     filter(gender == input$Gender1) %>%
-    #     select(-gender)
-    # }
-    # if(agegroup_dummy13() == "Any"){
-    #   tmp <- tmp %>%
-    #     filter(agegroup1 == input$Agegroup13) %>%
-    #     select(-agegroup1)
-    # }
-    tmp <- tmp %>%
-      select(-agegroup1)
-    tmp
+        select(-agegroup1)
+      tmp
+      },
+      error = function(cond) {
+      tmp <- tibble("Geography" = "-",
+                    "#"="-",
+                    "ME#" = "-")
+      tmp
+    })
   })
   ################
   
