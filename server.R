@@ -113,7 +113,8 @@ shinyServer(function(input, output, session) {
         filter(!str_detect(Geography,","))
     } else {
       tmp <- tmp %>%
-        filter(str_detect(Geography,"United States") | str_detect(Geography,input$State1))
+        filter(str_detect(Geography,"United States") | str_detect(Geography,paste0(", ",input$State1)) | 
+                 str_detect(Geography,paste0("^",input$State1,"$")))####
     }
     if(gen_dummy() == "Any"){
       tmp <- tmp %>%
@@ -221,7 +222,7 @@ shinyServer(function(input, output, session) {
   
   download_prepare <- reactive({
     rt <- rando_text()
-    tgen6()%>%as_xml_document()%>%
+    tgen()%>%as_xml_document()%>%
       write_html(paste(rt,'.html',sep=""))
     tmp <- read_html(paste(rt,'.html',sep="")) %>%
       html_table()
@@ -320,7 +321,8 @@ shinyServer(function(input, output, session) {
         filter(!str_detect(Geography,","))
     } else {
       tmp <- tmp %>%
-        filter(str_detect(Geography,"United States") | str_detect(Geography,input$State3))
+        filter(str_detect(Geography,"United States") | str_detect(Geography,paste0(", ",input$State3)) | 
+                 str_detect(Geography,paste0("^",input$State3,"$")))####
     }
     # if(gen_dummy() == "Any"){
     #   tmp <- tmp %>%
@@ -494,7 +496,8 @@ shinyServer(function(input, output, session) {
         filter(!str_detect(Geography,","))
     } else {
       tmp <- tmp %>%
-        filter(str_detect(Geography,"United States") | str_detect(Geography,input$State6))
+        filter(str_detect(Geography,"United States") | str_detect(Geography,paste0(", ",input$State6)) | 
+                 str_detect(Geography,paste0("^",input$State6,"$")))####
     }
     # if(gen_dummy() == "Any"){
     #   tmp <- tmp %>%
@@ -700,7 +703,8 @@ shinyServer(function(input, output, session) {
             filter(!str_detect(Geography,","))
         } else {
           tmp <- tmp %>%
-            filter(str_detect(Geography,"United States") | str_detect(Geography,input$State9))
+            filter(str_detect(Geography,"United States") | str_detect(Geography,paste0(", ",input$State9)) | 
+                     str_detect(Geography,paste0("^",input$State9,"$")))####
         }
         # if(gen_dummy() == "Any"){
         #   tmp <- tmp %>%
@@ -889,7 +893,8 @@ shinyServer(function(input, output, session) {
           filter(!str_detect(Geography,","))
       } else {
         tmp <- tmp %>%
-          filter(str_detect(Geography,"United States") | str_detect(Geography,input$State13))
+          filter(str_detect(Geography,"United States") | str_detect(Geography,paste0(", ",input$State13)) | 
+                   str_detect(Geography,paste0("^",input$State13,"$")))####
       }
       # if(gen_dummy() == "Any"){
       #   tmp <- tmp %>%
