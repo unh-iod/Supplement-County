@@ -418,7 +418,7 @@ shinyServer(function(input, output, session) {
   output$Downloader3 <- downloadHandler(
     filename = function(){
       paste(title3(),'download.xlsx',sep="")},
-    content = function(file){write_xlsx(download_prepare(),file)}
+    content = function(file){write_xlsx(download_prepare3(),file)}
   )  
   
 #######################################################################
@@ -600,7 +600,7 @@ shinyServer(function(input, output, session) {
   output$Downloader6 <- downloadHandler(
     filename = function(){
       paste(title6(),'download.xlsx',sep="")},
-    content = function(file){write_xlsx(download_prepare(),file)}
+    content = function(file){write_xlsx(download_prepare6(),file)}
   )
   
 #######################################################################
@@ -814,7 +814,7 @@ shinyServer(function(input, output, session) {
   output$Downloader9 <- downloadHandler(
     filename = function(){
       paste(title9(),'download.xlsx',sep="")},
-    content = function(file){write_xlsx(download_prepare(),file)}
+    content = function(file){write_xlsx(download_prepare9(),file)}
   )
   
   #######################################################################
@@ -1021,7 +1021,7 @@ shinyServer(function(input, output, session) {
   output$Downloader13 <- downloadHandler(
     filename = function(){
       paste(title13(),'download.xlsx',sep="")},
-    content = function(file){write_xlsx(download_prepare(),file)}
+    content = function(file){write_xlsx(download_prepare13(),file)}
   )
     
 ###########################################################################
