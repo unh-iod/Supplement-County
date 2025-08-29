@@ -113,7 +113,7 @@ tgentmp1 <- function(d,measure,col_spanners){
     sub_missing(missing_text = "*") |>
     tab_stubhead(label = "Geography") |>
     tab_source_note(c("Margins of error (ME) are based on 95% confidence intervals.",
-                      "† the margin of error is estimated assuming independence due to the necessity of combining error estimtates when reporting aggregated measures.")) |>
+                      "† the margin of error is estimated assuming independence due to the necessity of combining error estimates when reporting aggregated measures.")) |>
     fmt_number(columns = c("#",
                            "# ",
                            "#  "),
@@ -187,7 +187,7 @@ tgentmp3 <- function(d,measure,col_spanners,total=""){
     sub_missing(missing_text = "*") |>
     tab_stubhead(label = "Geography") |>
     tab_source_note(c("Margins of error (ME) are based on 95% confidence intervals.",
-                      "† the margin of error is estimated assuming independence due to the necessity of combining error estimtates when reporting aggregated measures.")) |>
+                      "† the margin of error is estimated assuming independence due to the necessity of combining error estimates when reporting aggregated measures.")) |>
     fmt_number(columns = c("#",
                            "# ",
                            "#  ",
