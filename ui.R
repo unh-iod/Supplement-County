@@ -106,7 +106,7 @@ fluidPage(
                           hr(),
                           selectInput("Measure3",h3("Measure"),
                                       choices = c("Employment to Population Ratio" = "E2PR",
-                                                  "Labor Force Particiaption" = "LFP",
+                                                  "Labor Force Participation" = "LFP",
                                                   "Unemployment Rate" = "UNEMP")),
                           selectInput("Disability3",h3("Disability"),
                                       choices = c("Disability"#,
