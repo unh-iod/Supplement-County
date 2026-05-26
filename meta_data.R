@@ -17,7 +17,7 @@ f <- function(x) {
   stringi::stri_unescape_unicode(x)
 }
 
-data_years <- list("acs" = c(2023:2012),
+data_years <- list("acs" = c(2024:2012),
                    "cps" = c())
 uniques <- list()
 uniques$gender <- c("Female","Male")
@@ -53,7 +53,7 @@ filterer <- data.frame(
 filterer6 <- data.frame(
   agegroup =  c("All","Any")) %>%
   tidyr::expand(agegroup)
-authors = "Thomas, N., Bach, S., & Houtenville, A."
+authors = "Thomas, N., Kingsbury, S., Lansing, J., & Houtenville, A. "
 ###########
 #Support Functions
 rando_text <- function(n = 1) {
